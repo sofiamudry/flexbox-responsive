@@ -8,6 +8,17 @@
 
  .container{
    background-color: #ccc;
+   width: 90%;
+   max-width: 1000px;
+   margin: auto;
+
+   /* flex */
+
+   display: flex;
+   /* tengo que ponerle display flex a la caja madre */
+   /* flex-direction: row;
+   flex-wrap: wrap; */
+   flex-flow: row wrap;
  }
 
  body{
@@ -16,21 +27,133 @@
 
  header{
    background-color: #2c3e50;
+   width: 100%;
+   padding: 20px;
+   /* flex */
+   /* como header se comporta como padre tengo que ponerle tmb display */
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   flex-wrap: wrap;
  }
 
- main{
-   background-color: #fff;
+ header .logo figure img {
+   width: 50px;
+   vertical-align: top;
  }
+
+ header .logo a {
+   color: #fff;
+   font-size: 30px;
+   text-decoration: none;
+   line-height: 50px;
+ }
+
+ header nav {
+   width: 50%;
+   /* background-color: white; */
+
+   /* flex */
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+ }
+
+ header nav a {
+   background-color: #c0392b;
+   color: #fff;
+   text-align: center;
+   text-decoration: none;
+   padding: 10px;
+   flex-grow: 1;
+ }
+
+ header nav :hover, footer .links a:hover {
+   background-color: #e74c3c;
+ }
+
+ .sections {
+   background-color: #fff;
+   padding: 20px;
+   /* flex */
+   /* flex-grow: 1;
+   flex-shrink: 1;
+   flex-basis: 70%; */
+   flex: 1 1 70%;
+ }
+
+ .sections article {
+   margin-bottom: 20px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid black;
+ }
+
+/* :nth-last-child() me sirve para seleccionar el ultimo de los que estan seleccionados y el numero es contando desde el ultimo cuantos */
+
+ .sections article:nth-last-child(1) {
+  margin-bottom: 0;
+  padding-bottom: 20;
+  border-bottom: none;
+ }
+
+ /* main{
+   background-color: #fff;
+ } */
 
  aside{
   background-color: #e67e22;
+  padding: 20px;
+
+  /* flex */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1 0 30%;
  }
 
  aside .widget {
    background-color: #d35400;
+   height: 150px;
+   margin: 10px;
  }
 
  footer{
    background-color: #2c3e50;
+   width: 100%;
+   padding: 20px;
+   /* flex */
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
  }
-  
+
+ footer .links {
+   background-color: #c0392b;
+   display: flex;
+   flex-wrap: wrap;
+ }
+
+footer .links a {
+  flex-grow: 1;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+footer .social {
+  background-color: #e67e22;
+  text-align: center;
+}
+
+footer .social a{
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+footer .social a:hover {
+  background-color: #f09a4e;
+}
